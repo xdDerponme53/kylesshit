@@ -1,7 +1,5 @@
 package CSIA;
 
-//push test
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -23,6 +21,16 @@ public class MainPage extends JFrame {
 
 	DefaultTableModel dtm = new DefaultTableModel();
 	final Object[] fields = new Object[5];
+	private JTextField iitextField;
+	private JTextField ibtextField;
+	private JTextField idtextField;
+	private JTextField ictextField;
+	private JTextField iqtextField;
+	private JTextField sitextField;
+	private JTextField sbtextField;
+	private JTextField sdtextField;
+	private JTextField sctextField;
+	private JTextField sqtextField;
 	
 	/**
 	 * Launch the application.
