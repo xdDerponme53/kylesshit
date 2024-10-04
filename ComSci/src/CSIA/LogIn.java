@@ -1,7 +1,5 @@
 package CSIA;
 
-//proof of pull
-
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.EmptyBorder;
