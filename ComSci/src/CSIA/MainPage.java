@@ -11,6 +11,9 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainPage extends JFrame {
 
@@ -204,6 +207,67 @@ public class MainPage extends JFrame {
 		sqtextField.setColumns(10);
 		sqtextField.setBounds(944, 841, 325, 30);
 		contentPane.add(sqtextField);
+		
+		JButton abtnNewButton = new JButton("Add");
+		abtnNewButton.setFont(new Font("Arial", Font.PLAIN, 35));
+		abtnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+                CustomerList cl = new CustomerList();
+                cl.setVisible(true);
+                dispose();
+			}
+		});
+		
+		abtnNewButton.setBounds(266, 917, 208, 86);
+		contentPane.add(abtnNewButton);
+		
+		JButton dbtnNewButton = new JButton("Delete");
+		dbtnNewButton.setFont(new Font("Arial", Font.PLAIN, 35));
+		dbtnNewButton.setBounds(530, 917, 208, 86);
+		contentPane.add(dbtnNewButton);
+		
+		JButton sbtnNewButton = new JButton("Save");
+		sbtnNewButton.setFont(new Font("Arial", Font.PLAIN, 35));
+		sbtnNewButton.setBounds(802, 917, 208, 86);
+		contentPane.add(sbtnNewButton);
+		
+		JButton bbtnNewButton = new JButton("Bought");
+		bbtnNewButton.setFont(new Font("Arial", Font.PLAIN, 35));
+		bbtnNewButton.setBounds(1061, 917, 208, 86);
+		contentPane.add(bbtnNewButton);
+		
+		JButton clbtnNewButton = new JButton("Customer List");
+		clbtnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		clbtnNewButton.setFont(new Font("Arial", Font.PLAIN, 35));
+		clbtnNewButton.setBounds(404, 10, 252, 30);
+		contentPane.add(clbtnNewButton);
+		
+		JButton olbtnNewButton = new JButton("Orders List");
+		olbtnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+                OrdersList ol = new OrdersList();
+                ol.setVisible(true);
+                dispose();
+			}
+		});
+		olbtnNewButton.setFont(new Font("Arial", Font.PLAIN, 35));
+		olbtnNewButton.setBounds(697, 10, 252, 30);
+		contentPane.add(olbtnNewButton);
+		
+		JButton cfbtnNewButton = new JButton("Cash Flow");
+		cfbtnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+                CashFlow cf = new CashFlow();
+                cf.setVisible(true);
+                dispose();
+			}
+		});
+		cfbtnNewButton.setFont(new Font("Arial", Font.PLAIN, 35));
+		cfbtnNewButton.setBounds(983, 10, 252, 30);
+		contentPane.add(cfbtnNewButton);
 
 	}
 }
