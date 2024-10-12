@@ -15,9 +15,6 @@ public class LogIn extends JFrame {
     // HashMap to store allowed usernames and passwords
     private HashMap<String, String> validUsers;
 
-    /**
-     * Launch the application.
-     */
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             try {
@@ -29,9 +26,6 @@ public class LogIn extends JFrame {
         });
     }
 
-    /**
-     * Create the frame.
-     */
     public LogIn() {
         setTitle("Sticky MNL - Log In");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,15 +33,15 @@ public class LogIn extends JFrame {
 
         // Initialize valid users and passwords
         validUsers = new HashMap<>();
-        validUsers.put("MissBehaves", "GabyDi94"); // Original user
-        validUsers.put("MarketManager", "Mikaella13"); // New user 1
+        validUsers.put("MissBehaves", "GabyDi94");
+        validUsers.put("MarketManager", "Mikaella13");
 
         // Panel settings
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
         contentPane.setBackground(Color.DARK_GRAY); // Dark theme	
         setContentPane(contentPane);
-        contentPane.setLayout(null); // Absolute layout for precise positioning
+        contentPane.setLayout(null);
 
         // Brand Label
         JLabel brandLabel = new JLabel("Sticky MNL");
@@ -115,26 +109,20 @@ public class LogIn extends JFrame {
 
         // Add action listener for the button
         loginButton.addActionListener(e -> {
-            // Get the username and password from the text fields
             String username = user.getText();
-            String password = new String(pass.getPassword()); // Convert char[] to String
+            String password = new String(pass.getPassword());
 
-            // Check if the username exists in the validUsers HashMap
             if (validUsers.containsKey(username)) {
-                // Check if the password matches the username
                 if (validUsers.get(username).equals(password)) {
-                    // If successful, open MainPage
                     JOptionPane.showMessageDialog(this, "Login Successful! Welcome!");
-                    new MainPage().setVisible(true); // Open MainPage
+                    new MainPage().setVisible(true);
                     this.dispose(); // Close login page
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid password. Please try again.");
-                    // Clear the password field only
                     pass.setText("");
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "Invalid username. Please try again.");
-                // Clear both the username and password fields
                 user.setText("");
                 pass.setText("");
             }
